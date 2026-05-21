@@ -50,21 +50,88 @@ html{
 
 /* ----- GLOBAL BUTTON DESIGN ----- */
 .btn{
-	font-family: 500;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+
 	padding: 12px 20px;
 	background: rgb(255, 97, 176);
+
+	color: white;
+	text-decoration: none;
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
 	transition: .4s;
 }
 .btn>i{
-	margin-left: 10px;
+	font-size: 16px;
+	color: white;
 }
 .btn:hover{
 	background: var(--second-color);
 	color:var(--color-white) ;
 }
+
+.btn:visited,
+.btn:active,
+.btn:link{
+	color: white;
+	text-decoration: none;
+}
+
+/* Fix for anchors and malformed HTML that cause link text to appear blue
+   Ensure any anchor wrapping or inside a `.btn` shows white text and icons */
+a .btn,
+a > .btn {
+	color: var(--color-white) !important;
+	text-decoration: none !important;
+}
+a .btn i,
+a > .btn i {
+	color: var(--color-white) !important;
+}
+/* Ensure anchor tags used incorrectly inside buttons also stay white */
+.nav-button a,
+.featured-text-btn a,
+.form-button a {
+	color: var(--color-white) !important;
+	text-decoration: none !important;
+}
+
+/* NAVBAR RESUME BUTTON */
+.nav-button .btn{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+
+	padding: 10px 18px;
+	height: auto;
+	width: auto;
+
+	background: rgb(255, 97, 176);
+	color: white !important;
+
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: normal;
+	text-decoration: none;
+
+	border-radius: 10px;
+
+	white-space: nowrap;
+}
+
+.nav-button .btn i{
+	color: white !important;
+	font-size: 14px;
+}
+
 /* ----- GLOBAL ICONS DESIGN ----- */
 i{
 	font-size: 16px;
@@ -176,11 +243,11 @@ nav{
 	display: flex;
 	gap: 20px;
 }
-.featured-text-btn>.blue-btn{
+.featured-text-btn>.btn{
 	background: var(--first-color);
 	color: var(--color-white)
 }
-.featured-text-btn>.blue-btn:hover{
+.featured-text-btn>.btn:hover{
 	background: var(--first-color-hover);
 }
 .social_icons{
